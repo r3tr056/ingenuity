@@ -1,0 +1,6 @@
+Debug
+.vs
+premake5.lua
+x64
+ingenuity/ingenuity.vcxproj.user
+finitycore/finitycore.vcxproj.user

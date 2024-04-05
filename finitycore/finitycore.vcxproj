@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{3102deed-61f0-4cd7-bc77-fc030228cff1}</ProjectGuid>
+    <RootNamespace>finitycore</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)include\imgui;$(ProjectDir)include\backends;$(ProjectDir)include\plugins</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\retro\Projects\finity-gengine\finitycore\libs\openal\Win32\EFX-Util_MTDLL;C:\Users\retro\Projects\finity-gengine\finitycore\libs\openal\Win32;C:\Users\retro\Documents\deps\GLFW\3.3.4-WIN64\lib-vc2019;C:\Users\retro\Documents\deps\glew\lib\Release\Win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glfw3dll.lib;glew32.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)include\imgui;$(ProjectDir)include\backends;$(ProjectDir)include\plugins</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\retro\Projects\finity-gengine\finitycore\libs\openal\Win32\EFX-Util_MTDLL;C:\Users\retro\Projects\finity-gengine\finitycore\libs\openal\Win32;C:\Users\retro\Documents\deps\GLFW\3.3.4-WIN64\lib-vc2019;C:\Users\retro\Documents\deps\glew\lib\Release\Win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glfw3dll.lib;glew32.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)include\imgui;$(ProjectDir)include\backends;$(ProjectDir)include\plugins</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\retro\Projects\finity-gengine\finitycore\libs\openal\Win64\EFX-Util_MTDLL;C:\Users\retro\Projects\finity-gengine\finitycore\libs\openal\Win64;$(ProjectDir)\libs\glew\x64;$(ProjectDir)\libs\assimp;$(ProjectDir)\libs\glfw\lib-vc2019</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;EFXUtil.lib;OpenAL32.lib;glew32s.lib;opengl32.lib;assimp-vc142-mtd.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)include;$(ProjectDir)include\imgui;$(ProjectDir)include\backends;$(ProjectDir)include\plugins</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\retro\Projects\finity-gengine\finitycore\libs\openal\Win64\EFX-Util_MTDLL;C:\Users\retro\Projects\finity-gengine\finitycore\libs\openal\Win64;C:\Users\retro\Projects\finity_vs2019\finity\finitycore\libs\glew\x64;C:\Users\retro\Documents\deps\GLFW\3.3.4-WIN64\lib-vc2017</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;EFXUtil.lib;OpenAL32.lib;opengl32.lib;glew32s.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Core\Audio\device.h" />
+    <ClInclude Include="src\Core\Audio\finAudio.h" />
+    <ClInclude Include="src\Core\Basics.h" />
+    <ClInclude Include="src\Core\Context.h" />
+    <ClInclude Include="src\Core\Core.h" />
+    <ClInclude Include="src\Core\Debug\DriverInfo.h" />
+    <ClInclude Include="src\Core\Debug\FPSCounter.h" />
+    <ClInclude Include="src\Core\Debug\FrameInfo.h" />
+    <ClInclude Include="src\Core\Debug\GameProfiler.h" />
+    <ClInclude Include="src\Core\Game.h" />
+    <ClInclude Include="src\Core\Logging.h" />
+    <ClInclude Include="src\Core\Memory\memory.h" />
+    <ClInclude Include="src\Core\UUID\endianness.h" />
+    <ClInclude Include="src\Core\UUID\uuid.hpp" />
+    <ClInclude Include="src\finPch.h" />
+    <ClInclude Include="src\Graphics\Components\Behaviour.h" />
+    <ClInclude Include="src\Graphics\Components\Collision\Collision.h" />
+    <ClInclude Include="src\Graphics\Components\Component.h" />
+    <ClInclude Include="src\Graphics\Components\Light\PointLight.h" />
+    <ClInclude Include="src\Graphics\Components\Object.h" />
+    <ClInclude Include="src\Graphics\Components\Transform\Transform.h" />
+    <ClInclude Include="src\Graphics\IDrawable.h" />
+    <ClInclude Include="src\Graphics\SceneSystem\Scene.h" />
+    <ClInclude Include="src\Graphics\SceneSystem\SceneManager.h" />
+    <ClInclude Include="src\UIGFX\Gfx.h" />
+    <ClInclude Include="src\UIGFX\input.h" />
+    <ClInclude Include="src\UIGFX\Panel.h" />
+    <ClInclude Include="src\UIGFX\panels\FileBrowser.h" />
+    <ClInclude Include="src\UIGFX\panels\ObjectHierarchyPanel.h" />
+    <ClInclude Include="src\UIGFX\panels\PropertyPanel.h" />
+    <ClInclude Include="src\UIGFX\panels\SceneView.h" />
+    <ClInclude Include="src\UIGFX\Window.h" />
+    <ClInclude Include="src\UIGFX\windows\fileoperations\fileDialog.h" />
+    <ClInclude Include="src\Modules\audio\al_utils.h" />
+    <ClInclude Include="src\Modules\audio\audio.hpp" />
+    <ClInclude Include="src\Modules\audio\device.h" />
+    <ClInclude Include="src\Modules\audio\deviceimpl\deviceImpl.h" />
+    <ClInclude Include="src\Modules\audio\listener\listener_impl.h" />
+    <ClInclude Include="src\Modules\finModule.h" />
+    <ClInclude Include="src\Modules\importers\meshImporter.h" />
+    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\Core\Application.h" />
+    <ClInclude Include="src\Graphics\Components\Camera\Camera.h" />
+    <ClInclude Include="src\Graphics\Components\Collision\CollisionModel\CollisionModel.h" />
+    <ClInclude Include="src\Graphics\Components\Face.h" />
+    <ClInclude Include="src\Graphics\Components\GLShader.h" />
+    <ClInclude Include="src\Graphics\Components\GLTexture.h" />
+    <ClInclude Include="src\Graphics\Components\GLVertexArray.h" />
+    <ClInclude Include="src\Graphics\Components\Light\Light.h" />
+    <ClInclude Include="src\Graphics\Components\Mesh.h" />
+    <ClInclude Include="src\Graphics\Components\PBR\PBRMaterial.h" />
+    <ClInclude Include="src\Graphics\Components\Skybox\Skybox.h" />
+    <ClInclude Include="src\render\components\StaticDirectionalLight.h" />
+    <ClInclude Include="src\render\components\StaticPointLight.h" />
+    <ClInclude Include="src\render\components\StaticSpotLight.h" />
+    <ClInclude Include="src\Graphics\Components\VertexHolder.h" />
+    <ClInclude Include="src\Graphics\glBufferManager.h" />
+    <ClInclude Include="src\Graphics\glContext.h" />
+    <ClInclude Include="src\Graphics\Handler\errorHandler\errors.h" />
+    <ClInclude Include="src\Graphics\renderBase.h" />
+    <ClInclude Include="src\Graphics\uiContext.h" />
+    <ClInclude Include="src\Graphics\Util\hardwarecaps.h" />
+    <ClInclude Include="src\Graphics\Util\strUtil.h" />
+    <ClInclude Include="src\Graphics\Util\tokenizer.h" />
+    <ClInclude Include="src\Graphics\widgets.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="finitycore.cpp" />
+    <ClCompile Include="src\Core\Audio\device.cpp" />
+    <ClCompile Include="src\Core\Audio\finAudio.cpp" />
+    <ClCompile Include="src\Core\Context.cpp" />
+    <ClCompile Include="src\Core\Game.cpp" />
+    <ClCompile Include="src\Core\Memory\memory.cpp" />
+    <ClCompile Include="src\Graphics\Components\Object.cpp" />
+    <ClCompile Include="src\Graphics\SceneSystem\Scene.cpp" />
+    <ClCompile Include="src\UIGFX\Gfx.cpp" />
+    <ClCompile Include="src\UIGFX\panels\SceneView.cpp" />
+    <ClCompile Include="src\UIGFX\Window.cpp" />
+    <ClCompile Include="src\Modules\audio\device.cpp" />
+    <ClCompile Include="src\Modules\audio\deviceimpl\deviceImpl.cpp" />
+    <ClCompile Include="src\Modules\audio\listener\listener_impl.cpp" />
+    <ClCompile Include="src\Modules\importers\meshImporter.cpp" />
+    <ClCompile Include="src\Core\Application.cpp" />
+    <ClCompile Include="src\Graphics\Components\Camera\Camera.cpp" />
+    <ClCompile Include="src\Graphics\Components\Collision\CollisionModel\CollisionModel.cpp" />
+    <ClCompile Include="src\Graphics\Components\GLShader.cpp" />
+    <ClCompile Include="src\Graphics\Components\GLTexture.cpp" />
+    <ClCompile Include="src\Graphics\Components\GLVertexArray.cpp" />
+    <ClCompile Include="src\Graphics\Components\Mesh.cpp" />
+    <ClCompile Include="src\Graphics\Components\PBR\PBRMaterial.cpp" />
+    <ClCompile Include="src\Graphics\Components\Skybox\Skybox.cpp" />
+    <ClCompile Include="src\Graphics\glBufferManager.cpp" />
+    <ClCompile Include="src\Graphics\glContext.cpp" />
+    <ClCompile Include="src\Graphics\Handler\errorHandler\errors.cpp" />
+    <ClCompile Include="src\Graphics\renderer.cpp" />
+    <ClCompile Include="src\Graphics\Util\tokenizer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="renderers\fin_renderer_opengl3\fin_renderer_opengl3.vcxproj">
+      <Project>{01aabd89-cb72-47e0-88a0-893d1aacd817}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
