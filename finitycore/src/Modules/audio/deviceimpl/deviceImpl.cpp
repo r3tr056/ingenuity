@@ -54,14 +54,14 @@ namespace finity {
 		DeviceImpl::DeviceImpl(int devnum) {
 
 			auto playback_devs = enumerate_playback_devices();
-			// log_info("Supported audio playback devices : ");
+			log_info("Supported audio playback devices : ");
 			for (const auto& dev : playback_devs) {
-				// log_info("-- " + dev)
+				log_info("-- " + dev)
 			}
 			auto cap_devices = enumerate_capture_devices();
-			// log("Supported capture devices : ");
+			log_info("Supported capture devices : ");
 			for (const auto& dev : cap_devices) {
-				// log("-- " + dev)
+				log_info("-- " + dev)
 			}
 
 			if (devnum >= 0 && devnum < int(playback_devs.size())) {
@@ -72,8 +72,8 @@ namespace finity {
 			device_.reset(alcOpenDevice(device_id_.empty() ? nullptr : device_id_.c_str()));
 
 			if (device_ == nullptr) {
-				// log_error("Can't open audio playback device: " + device_id_);
-				// throw audio::exception("Can't open aduio playback device: " + device_id_);
+				log_error("Can't open audio playback device: " + device_id_);
+				std::runtime_error("Failed to open audio playback device : " + device_id_);
 			}
 			bool has_efx_ = openal::al_has_extension(device_.get(), "ALC_EXT_EFX");
 
@@ -85,8 +85,8 @@ namespace finity {
 			context_.reset(alcCreateContext(device_.get(), has_efx_ ? attribs : nullptr));
 
 			if (context_ == nullptr) {
-				// log_error("Cant create audio context for playback device: " + device_id_);
-				// throw audio::exception("Cant create audio context for playback device: " + device_id_);
+				log_error("Cant create audio context for playback device: " + device_id_);
+				throw std::runtime_error("Cant create audio context for playback device: " + device_id_);
 			}
 			enable();
 
@@ -94,15 +94,22 @@ namespace finity {
 			vendor_ = openal::al_vendor();
 			extensions_ = openal::al_extensions();
 
-			// log_info(version_);
-			// log_info(vendor_);
-			// log_info(_extensions);
-			// log_info("Using audio playback device: " + device_id_);
-			al_check(alDistanceModel(AL_LINEAR_DISTANCE));
+			log_info(version_);
+			log_info(vendor_);
+			log_info(extensions_);
+			log_info("Using audio playback device: " + device_id_);
 		}
 
-		void finAudio::device::DeviceImpl::enable()
+		void DeviceImpl::enable()
 		{
+			// set the ALC context
+			alcMakeContextCurrent(context_.get());
+		}
+
+		void DeviceImpl::disable()
+		{
+			// unset the ALC context
+			alcMakeContextCurrent(nullptr);
 		}
 
 		std::vector<std::string> DeviceImpl::enumerate_capture_devices() {
@@ -137,11 +144,10 @@ namespace finity {
 		}
 
 		void ListenerImpl::set_volume(float vol) {
-			al_check(alListenerf(AL_GAIN, vol));
 		}
 
 		void ListenerImpl::set_pos(float pos) {
-			al
+		
 		}
 	}
 }
