@@ -149,7 +149,6 @@ namespace finitycore::Core::Graphics::Components {
     class PrespectiveCamera : public Camera {
     public:
         bool init(GLint screenWidth, GLint screenHeight, GLfloat fovRadians, GLfloat depth);
-        void destroy();
         void update(GLint projectionViewBinding, glm::vec3 camPos, glm::vec3 camLookAt);
         glm::mat4 getPojectionView() { return mProjection * mView; }
 
@@ -168,7 +167,6 @@ namespace finitycore::Core::Graphics::Components {
     class OrthoCamera : public Camera {
     public:
         bool init(GLfloat width, GLfloat height, GLfloat minDepth, GLfloat maxDepth);
-        void destroy();
 
         void update(GLint projectionViewBinding, glm::vec3 camPos, glm::vec3 camLookAt);
         glm::mat4 getProjectionView() { return mProjection * mView; }
