@@ -161,6 +161,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="renderers\fin_renderer_opengl3\opengl3\graphics\buffers\GLFrameBuffer.h" />
+    <ClInclude Include="renderers\fin_renderer_opengl3\opengl3\graphics\hardware\HardwareCaps.h" />
+    <ClInclude Include="renderers\fin_renderer_opengl3\opengl3\graphics\shader\GLShaderProgram.h" />
+    <ClInclude Include="renderers\fin_renderer_opengl3\opengl3\graphics\shader\GLShaderProgramFactory.h" />
+    <ClInclude Include="renderers\fin_renderer_opengl3\opengl3\graphics\shader\ShaderStage.h" />
     <ClInclude Include="src\Core\Audio\device.h" />
     <ClInclude Include="src\Core\Audio\finAudio.h" />
     <ClInclude Include="src\Core\Basics.h" />
@@ -182,6 +187,7 @@
     <ClInclude Include="src\Graphics\Components\Light\PointLight.h" />
     <ClInclude Include="src\Graphics\Components\Object.h" />
     <ClInclude Include="src\Graphics\Components\Transform\Transform.h" />
+    <ClInclude Include="src\Graphics\engine.h" />
     <ClInclude Include="src\Graphics\IDrawable.h" />
     <ClInclude Include="src\Graphics\SceneSystem\Scene.h" />
     <ClInclude Include="src\Graphics\SceneSystem\SceneManager.h" />
@@ -206,9 +212,8 @@
     <ClInclude Include="src\Graphics\Components\Camera\Camera.h" />
     <ClInclude Include="src\Graphics\Components\Collision\CollisionModel\CollisionModel.h" />
     <ClInclude Include="src\Graphics\Components\Face.h" />
-    <ClInclude Include="src\Graphics\Components\GLShader.h" />
     <ClInclude Include="src\Graphics\Components\GLTexture.h" />
-    <ClInclude Include="src\Graphics\Components\GLVertexArray.h" />
+    <ClInclude Include="renderers\fin_renderer_opengl3\opengl3\graphics\buffers\GLVertexArray.h" />
     <ClInclude Include="src\Graphics\Components\Light\Light.h" />
     <ClInclude Include="src\Graphics\Components\Mesh.h" />
     <ClInclude Include="src\Graphics\Components\PBR\PBRMaterial.h" />
@@ -229,12 +234,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="finitycore.cpp" />
+    <ClCompile Include="renderers\fin_renderer_opengl3\opengl3\graphics\buffers\GLFrameBuffer.cpp" />
+    <ClCompile Include="renderers\fin_renderer_opengl3\opengl3\graphics\shader\GLShaderProgram.cpp" />
+    <ClCompile Include="renderers\fin_renderer_opengl3\opengl3\graphics\shader\GLShaderProgramFactory.cpp" />
     <ClCompile Include="src\Core\Audio\device.cpp" />
     <ClCompile Include="src\Core\Audio\finAudio.cpp" />
     <ClCompile Include="src\Core\Context.cpp" />
     <ClCompile Include="src\Core\Game.cpp" />
     <ClCompile Include="src\Core\Memory\memory.cpp" />
     <ClCompile Include="src\Graphics\Components\Object.cpp" />
+    <ClCompile Include="src\Graphics\engine.cpp" />
     <ClCompile Include="src\Graphics\SceneSystem\Scene.cpp" />
     <ClCompile Include="src\UIGFX\Gfx.cpp" />
     <ClCompile Include="src\UIGFX\panels\SceneView.cpp" />
@@ -248,7 +257,7 @@
     <ClCompile Include="src\Graphics\Components\Collision\CollisionModel\CollisionModel.cpp" />
     <ClCompile Include="src\Graphics\Components\GLShader.cpp" />
     <ClCompile Include="src\Graphics\Components\GLTexture.cpp" />
-    <ClCompile Include="src\Graphics\Components\GLVertexArray.cpp" />
+    <ClCompile Include="renderers\fin_renderer_opengl3\opengl3\graphics\buffers\GLVertexArray.cpp" />
     <ClCompile Include="src\Graphics\Components\Mesh.cpp" />
     <ClCompile Include="src\Graphics\Components\PBR\PBRMaterial.cpp" />
     <ClCompile Include="src\Graphics\Components\Skybox\Skybox.cpp" />

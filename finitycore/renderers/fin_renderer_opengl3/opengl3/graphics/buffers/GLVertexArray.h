@@ -1,6 +1,8 @@
 #pragma once
-#ifndef FINITY_GUI_GLVERTEXARRAY_H
-#define FINITY_GUI_GLVERTEXARRAY_H
+
+
+#ifndef FINITY_GL_RENDERER_VERTEXARRAY_H
+#define FINITY_GL_RENDERER_VERTEXARRAY_H
 
 #include <GL/glew.h>
 

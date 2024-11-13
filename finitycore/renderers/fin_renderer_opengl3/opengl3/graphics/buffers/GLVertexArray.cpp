@@ -5,8 +5,13 @@ void GLVertexArray::init() noexcept {
     glGenVertexArrays(1, &mVAO);
 }
 
-void GLVertexArray::attachBuffer(const BufferType type, const GLsizeiptr size, const DrawMode mode,
-                                 const void *data) noexcept {
+void GLVertexArray::attachBuffer(
+    const BufferType type,
+    const GLsizeiptr size,
+    const DrawMode mode,
+    const void *data
+) noexcept {
+
     GLuint buffer;
     glGenBuffers(1, &buffer);
     glBindBuffer(type, buffer);

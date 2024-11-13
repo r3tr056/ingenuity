@@ -1,5 +1,7 @@
 #pragma once
 
+#include <finPch.h>
+
 #include <memory>
 #include <string>
 #include <vector>
@@ -17,7 +19,6 @@ namespace audio {
 		void enable();
 		void disable();
 
-		bool is_valid() const;
 
 		const std::string& get_device_id() const;
 		const std::string& get_version() const;

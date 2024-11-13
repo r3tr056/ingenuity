@@ -7,7 +7,7 @@
 #include <Platform/DetectArchitecture.h>
 #include <Platform/DetectPlatform.h>
 
-class Bascics {
+class Basics {
 public:
 	static 
 };

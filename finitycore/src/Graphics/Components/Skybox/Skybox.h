@@ -4,9 +4,9 @@
 
 #include <string>
 
-#include "../glVertexArray.h"
+#include "../renderers/fin_renderer_opengl3/opengl3/graphics/buffers/GLVertexArray.h"
 
-class finSkybox {
+class Skybox {
 
 public:
     void init(const std::string hdrPath, const std::size_t res=512);
@@ -19,6 +19,7 @@ public:
 private:
     unsigned int mIrradianceMap, mCubeVAO, mEnvCubeMap, mPrefilterMap, mbrdfLUT;
     void renderCache();
+
     GLVertexArray mquadVAO;
 };
 

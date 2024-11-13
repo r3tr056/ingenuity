@@ -2,7 +2,6 @@
 #ifndef FINITY_GUI_COLLISIONMODEL_H
 #define FINITY_GUI_COLLISIONMODEL_H
 
-#include "CollisionModel.h"
 
 #include <glm/glm.hpp>
 #include <GL/gl.h>
@@ -42,9 +41,11 @@ typedef GLint cmHandle_t;
 #define CM_BOX_EPSILON 1.0f
 #define CM_MAX_TRACT_DIST 4096.0f
 
-class finCollisionModelManager {
+class CollisionModelMananger {
 public:
-    virtual void loadMap(const finMapFile *mapFile) = 0;
+    void loadMap(const finMapFile* mapFile) {
+
+    }
     virtual void freeMap() = 0;
     virtual cmHandle_t loadModel(const char *modelName, const bool precache) = 0;
     virtual cmHandle_t setupTrmModel(const finTraceModel &trm, const finMaterial *mat) = 0;

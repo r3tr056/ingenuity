@@ -1,17 +1,19 @@
 #pragma once
-#ifndef FINITY_GUI_GLFRAMEBUFFER_H
-#define FINITY_GUI_GLFRAMEBUFFER_H
+
+#ifndef FINITY_RENDERER_GLFRAMEBUFFER_H
+#define FINITY_RENDERER_GLFRAMEBUFFER_H
 
 #include <GL/glew.h>
 #include <string_view>
 #include <string>
-#include "../renderBase.h"
 
-class GLFrameBuffer : public FrameBuffer {
+class GLFrameBuffer {
 
 private:
     void catchErrors() const;
-    GLuint mfboID{0 };
+
+    GLuint mfboID{ 0 };
+
     std::string mName;
 
 public:
@@ -42,9 +44,14 @@ public:
         BACK_LEFT = GL_BACK_LEFT
     };
 
+    // intialize the framebuffer with OpenGL
     void Init(std::string& name);
+    // Tell opengl to delete this framebuffer and underlying attachments
     void Delete();
+
+    // deletes and re-initialized the frame buffer.
     void Reset();
+
     void attachTexture(const GLuint& texID, const AttachmentType colorAttachment) const;
     void attachRenderBuffer(const GLuint& rbID, const AttachmentType attachType) const;
     void bind() const;

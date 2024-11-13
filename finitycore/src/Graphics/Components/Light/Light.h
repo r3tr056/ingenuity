@@ -2,7 +2,7 @@
 #ifndef FINITY_GUI_LIGHT_H
 #define FINITY_GUI_LIGHT_H
 
-#include "GLShader.h"
+#include "../glShader.h"
 
 namespace finitycore::Core::Graphics::Components {
 
